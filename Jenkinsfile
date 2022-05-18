@@ -7,7 +7,7 @@ pipeline{
 		stage('Build') {
 
 			steps {
-				sh 'docker build -t ms_ca/ubuntu:latest .'
+				def app = docker.build "bg/ms_ca:v1"
 				echo "DONE BUILD PASSED"
 			}
 		}
