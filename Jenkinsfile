@@ -13,7 +13,7 @@ pipeline{
 
 			steps {
 				script {
-					dockerImage = docker.build registry + ":v$BUILD_NUMBER -p 192.168.1.100:8080:80"
+					dockerImage = docker.build -p 192.168.1.100:8080:80 registry + ":v$BUILD_NUMBER"
 					echo "DONE BUILD PASSED"
 				}
 			}
