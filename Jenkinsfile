@@ -7,8 +7,10 @@ pipeline{
 		stage('Build') {
 
 			steps {
-				docker.build "bg/ms_ca:v1"
-				echo "DONE BUILD PASSED"
+				script {
+					docker.build "bg/ms_ca:v1"
+					echo "DONE BUILD PASSED"
+				}
 			}
 		}
 
