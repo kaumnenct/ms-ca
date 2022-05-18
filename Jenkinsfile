@@ -8,7 +8,7 @@ pipeline{
 
 			steps {
 				script {
-					docker.build "bg/ms_ca:v1"
+					dockerImage = docker.build "bg/ms_ca:v1"
 					echo "DONE BUILD PASSED"
 				}
 			}
