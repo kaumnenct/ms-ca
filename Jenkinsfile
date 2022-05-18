@@ -1,4 +1,9 @@
 pipeline{
+	environment {
+		registry = "kaumnenct/ms-ca"
+		registryCredential = "docker_hub_secret"
+		dockerImage = ""
+	}
 
 	agent any
 
@@ -8,23 +13,20 @@ pipeline{
 
 			steps {
 				script {
-					dockerImage = docker.build "bg/ms_ca:v1"
+					dockerImage = docker.build registry + "v$BUILD_NUMBER"
 					echo "DONE BUILD PASSED"
 				}
 			}
 		}
 
-		stage('Login') {
+		stage('Image Deploy') {
 
 			steps {
-				echo 'test2'
-			}
-		}
-
-		stage('Push') {
-
-			steps {
-				echo 'test3'
+				script {
+					docker.withRegistry("", registryCredential) {
+						dockerImage.push()
+					}
+				}
 			}
 		}
 	}
