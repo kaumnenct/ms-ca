@@ -6,6 +6,6 @@ COPY . /app
 
 WORKDIR /app
 
-EXPOSE 80 443
+EXPOSE 80
 
 CMD echo "yes" | ./rundemo.sh
