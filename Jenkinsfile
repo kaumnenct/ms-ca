@@ -7,7 +7,8 @@ pipeline{
 		stage('Build') {
 
 			steps {
-				echo 'test'
+				sh 'docker build -t ms_ca/ubuntu:latest .'
+				echo "DONE BUILD PASSED"
 			}
 		}
 
