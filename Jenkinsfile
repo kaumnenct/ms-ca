@@ -7,7 +7,7 @@ pipeline{
 		stage('Build') {
 
 			steps {
-				def app = docker.build "bg/ms_ca:v1"
+				docker.build "bg/ms_ca:v1"
 				echo "DONE BUILD PASSED"
 			}
 		}
