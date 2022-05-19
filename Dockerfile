@@ -37,7 +37,7 @@ RUN echo 'acme={\
     rsa=true,\
     production=true,\
     email="aleksej.komnenovic@comtrade.com",\
-    domains={"docker-swarm-apps.westeurope.cloudapp.azure.com/"}\
+    domains={"docker-swarm-apps.westeurope.cloudapp.azure.com"}\
     }' >> mako.conf
 
 CMD mako -l::/tutorials/certmgr.zip
