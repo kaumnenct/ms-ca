@@ -30,4 +30,8 @@ RUN apt-get update && apt-get install -y unzip
 
 RUN unzip tutorials.zip -d tutorials
 
+RUN touch mako.conf
+
+RUN echo "acme={acceptterms=true,rsa=true,production=true,email="aleksej.komnenovic@comtrade.com",domains={"http://docker-swarm-apps.westeurope.cloudapp.azure.com/"}}" >> mako.conf
+
 CMD mako -l::/tutorials/certmgr.zip
