@@ -22,4 +22,12 @@ RUN cd /
 
 EXPOSE 80
 
-CMD mako -l::tutorial/DownloadTutorials.zip
+RUN wget http://makoserver.net/download/tutorials.zip
+
+RUN mkdir tutorials
+
+RUN apt-get update && apt-get install -y unzip
+
+RUN unzip tutorials.zip -d tutorials
+
+CMD mako -l::/tutorials/certmgr.zip
