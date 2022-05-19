@@ -22,6 +22,8 @@ RUN cd /
 
 EXPOSE 80
 
+EXPOSE 443
+
 RUN wget http://makoserver.net/download/tutorials.zip
 
 RUN mkdir tutorials
